@@ -1,0 +1,81 @@
+PROCEDURE dot-product(v1:arrayof-integer , v2:array-of-integer , var ps:float) //ps : variable feha produit v1[i]v2[i]
+BEGIN
+
+FOR i FROM 0 TO 2  DO
+    // dot prodct mte3 les 2 vecteurs , v1[1,0,5] and v2=[0,0,0] ---> ps:(10)+(00)+(50)
+    ps = ps +(v1[i]*v2[i])
+ENDFOR
+END
+ALGORITHM algorithm produit scalaire
+VAR
+     v1:array-of-inetegr[3],
+     v2:array-of-inetegr[3],
+     x:float
+BEGIN
+    //lire les deux vecetrus 2
+    write('donner les 3 composants du 1er vecteur sou tableau')
+    FOR i FROM 0 TO 2  DO
+        read(v1[i])
+    END_FOR
+
+    //lecture tab 2
+    write('donner les 3 composants du 2eme vecteur ou tableau')
+    FOR i FROM 0 TO 2  DO
+        read(v2[i])
+    END_FOR
+
+
+//call procedure du
+dot-product(v1,v2,ps)
+
+//partie condition du
+
+IF (ps=0) THEN
+      write('les vecteurs sont ortho')
+ELSE
+     write('les vecteurs non ortho')
+END_IF
+
+
+END
+FUNCTION scalar-product(v1:array-of-integer , v2:array-of-integer ):float 
+VAR ps:float
+BEGIN
+
+FOR i FROM 0 TO 2  DO
+    ps = ps +(v1[i]*v2[i])
+ENDFOR
+END
+
+
+
+
+
+ALGORITHM algorithm produit scalaire
+VAR
+     v1:array-of-inetegr[3],
+     v2:array-of-inetegr[3],
+     x:float
+BEGIN
+    write('donner les 3 composants du 1er vecteur sou tableau')
+    FOR i FROM 0 TO 2  DO
+        read(v1[i])
+    END_FOR
+
+    write('donner les 3 composants du 2eme vecteur ou tableau')
+    FOR i FROM 0 TO 2  DO
+        read(v2[i])
+    END_FOR
+
+
+x:=scalar_prod(v1,v2)
+
+
+IF (x=0) THEN
+      write('les vecteurs sont ortho')
+ELSE
+     write('les vecteurs non ortho')
+END_IF
+
+
+END
